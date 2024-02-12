@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const AdminLogin = () => {
+    const navigate=useNavigate()
     const [input,setInput] = new useState(
         {
           "UserName":"",
@@ -15,7 +16,8 @@ const AdminLogin = () => {
         console.log(input)
         if(input.UserName=="admin" && input.Password=="admin")
         {
-          alert("Login Successful")
+            navigate("/addstudent")
+          
           setInput({
             "UserName":"",
             "Password":""
